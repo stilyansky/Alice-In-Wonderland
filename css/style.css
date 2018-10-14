@@ -1,0 +1,313 @@
+html{
+  font-size: 16px;
+}
+
+body {
+  background-image: url("../img/bg-pattern-20.png");
+  background-color: #001039;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+}
+
+fieldset {
+  border: none;
+  background-color: #feffff;
+  border-radius: 50px;
+}
+
+legend {
+  background-color: #eee;
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+  text-align: center;
+  align-self: : center;
+  padding: 0.8em;
+  border-radius: 50px;
+}
+
+table {
+  padding: 1rem;
+}
+
+button {
+  background-color: #1f5de8;
+  border: none;
+  box-shadow: 0px 0px 10px 2px #ececec;
+  color: #FFFFFF;
+  font-weight: bold;
+  padding: 1em;
+  padding-left: 2em;
+  padding-right: 2em;
+  border-radius: 50px;
+  outline:none;
+}
+
+button:hover {
+  box-shadow: 7px 7px 10px #0b3dac inset;
+}
+
+input {
+  background-color: white;
+  box-shadow: 0px 0px 10px 2px #ececec;
+  border: none;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 400;
+  padding: 1em;
+  width: 50px;
+  border-radius: 50px;
+  text-align: center;
+  outline:none;
+}
+
+input:hover {
+  box-shadow: 0px 0px 8px #1f5de8 ;
+}
+
+em {
+  font-weight: 900;
+}
+
+.task-headline {
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  text-align: center;
+}
+
+.icons {
+  width: 81px;
+  height: 80px;
+}
+
+.icon-td {
+  text-align: center;
+}
+
+.center-objects {
+  text-align: center;
+}
+
+/* BEGIN WELCOME SCREEN STYLING */
+#intro {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/*  Alice drop animation */
+.enter-site img {
+  position: relative;
+  transition: 1s;
+}
+
+.enter-site:hover img:nth-last-child(2) {
+  transition: 1s;
+  transform: translateY(230px);
+  opacity: 0;
+  max-width: 88px;
+}
+
+/* Alice drop animation end */
+#intro-content {
+  text-align: center;
+}
+
+.intro-headline {
+  background-color: #1f5de8;
+  border-radius: 50px;
+  font-family: 'Lato', sans-serif;
+  font-size: 1.9rem;
+  font-weight: 900;
+  color: #ffffff;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.into-subline {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
+.long-text {
+  max-width: 400px;
+}
+
+.italic-text {
+  font-style: italic;
+  font-weight: 300;
+}
+
+#hole {
+  width: 200px;
+  height: 154px;
+}
+
+#human {
+  width: 100px;
+  height: 100px;
+}
+
+/* END WELCOME SCREEN STYLING */
+.result-image {
+  width: 30px;
+  height: 30px;
+}
+
+.result-display {
+  margin-top: -24px;
+  margin-left: 37px;
+}
+
+.highlight-answer {
+  background-color: #1f5de8;
+  color: #fff;
+}
+
+.dehighlight-answer {
+  background-color: #fff;
+  color: black;
+}
+
+#current-year {
+  background-color: #ebebeb;
+  font-weight: 700;
+}
+
+#show-solutions {
+  display: none;
+}
+
+.cat-graphic {
+  text-align: center;
+}
+
+#cat {
+  width: 244px;
+  height: 150px;
+}
+
+/* Grid assignment of the elements */
+.cat-graphic {
+  grid-area: top;
+}
+
+.task1 {
+  grid-area: task-1;
+}
+
+.task2 {
+  grid-area: task-2;
+}
+
+.task3 {
+  grid-area: task-3;
+}
+
+.task4 {
+  grid-area: task-4;
+}
+
+/* Grid setup - browsers above 1200px screen width */
+#solutions {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 1fr;
+  grid-gap: 1rem;
+  max-width: 1440px;
+  grid-template-areas:
+    " . top . "
+    " . task-1 . "
+    " . task-2 . "
+    " . task-3 . "
+    " . task-4 . ";
+}
+
+/*  cenrter the content */
+#solutions {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
+
+/* special conditions for browsers between 550 - 1200 px screen width */
+@media only screen and (max-width: 1200px) {
+  #solutions {
+    grid-template-columns: 1fr 3fr 1fr;
+  }
+
+  .task-headline {
+    font-size: 1rem;
+  }
+
+  input {
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 0.5em;
+  }
+
+  .intro-headline {
+    font-size: 1.5rem;
+  }
+}
+
+/* special conditions for browsers below 550px screen width */
+@media only screen and (max-width: 550px) {
+  #solutions {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 1rem;
+    max-width: 19rem;
+    grid-template-areas:
+      "top"
+      "task-1"
+      "task-2"
+      "task-3"
+      "task-4";
+  }
+
+  #solutions {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-52%, 0%);
+  }
+
+  body {
+    font-size: 0.7rem;
+  }
+
+  legend {
+    font-size: 0.7rem;
+  }
+
+  .task-headline {
+    font-size: 0.7rem;
+  }
+
+  input {
+    font-size: 0.7rem;
+    font-weight: 400;
+    padding: 0.4em;
+  }
+
+  button {
+    padding: 0.5rem;
+  }
+
+  .intro-headline {
+    font-size: 1.25rem;
+  }
+
+  .icons {
+    width: 60px;
+    height: 60px;
+  }
+
+  #cat {
+    width: 150px;
+    height: 92px;
+  }
+}

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Tech Sample - JavaScript L1</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato::100,300,400i,400,700,900" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+  </head>
+  <body>
+    <div id="wrapper">
+        <!--  Welcome screen -->
+        <div id="intro">
+          <div id="intro-content">
+          <form>
+            <fieldset>
+              <table class="intro-table">
+                <tr><br/>
+                  <td class="intro-headline">WELL HELLO, ALICE!</td>
+                </tr>
+                <tr>
+                  <td><p class="into-subline">Have you ever wondered:</p></td>
+                </tr>
+                <tr>
+                  <tr><td class="italic-text"> ~ </td></tr>
+                  <tr><td class="italic-text">How old you are?</td></tr>
+                  <tr><td class="italic-text">How much snack you need until you die?</td></tr>
+                  <tr><td class="italic-text">How to calculate a cirlces circumference and area?</td></tr>
+                  <tr><td class="italic-text">And what the hell is Fahrenheit?</td></tr>
+                  <tr><td class="italic-text"> ~ </td></tr>
+                </tr>
+                <tr>
+                  <td> <p class="long-text">Well, wonder no more - <em>click bellow</em> and enter the <em>RABBIT HOLE </em> in order to find out.</p> </td>
+                </tr>
+                <tr>
+                  <tr>
+                    <td>
+                      <div class="enter-site" onclick="revealTasks()">
+                        <img src="img/alice.png" alt="human" id="human">
+                        <p><img src="img/hole.png" alt="hole" id="hole"></p>
+                      </div>
+                    </td>
+                  </tr>
+                </tr>
+              </table>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+        <!-- Calulators -->
+        <div id="show-solutions">
+          <div id="solutions">
+            <!--  Cat graphic on the top -->
+            <div class="cat-graphic"> <img src="img/cat.png" alt="center image" id="cat"> </div>
+          <!-- FIRST TASK -->
+            <form class="task1" action="index.html" method="post">
+              <fieldset>
+                <legend> TASK 1 </legend>
+                  <table>
+                    <tr>
+                      <td colspan="2" class="icon-td"> <img src="img/calculator.png" alt="calculator" class="icons"> </td>
+                    </tr>
+                    <tr>
+                      <td colspan="2" class="task-headline"> <p>THE AGE CALCULATOR</p> </td>
+                    </tr>
+                    <tr>
+                      <td>Have you forgotten how old you are? Please fill in your <em>year of birth</em> in the following field:</td>
+                      <td><input type="number" name="birthYear" id="birth-year" value="1989"></td>
+                    </tr>
+                    <tr>
+                      <td> Taking into account that it is: </td>
+                      <td> <input type="text" name="currentYear" id="current-year" readonly> </td>
+                    </tr>
+                    <tr>
+                      <td> <button type="button" name="button" onclick="calculateAge('birth-year')"> Calculate </button> </td>
+                    </tr>
+                    <tr>
+                      <td id="age-result"> </td>
+                    </tr>
+                  </table>
+              </fieldset>
+            </form>
+            <!-- SECOND TASK -->
+            <form class="task2" action="index.html" method="post">
+              <fieldset>
+                <legend> TASK 2 </legend>
+                  <table>
+                    <tr>
+                      <td colspan="4" class="icon-td"> <img src="img/snack.png" alt="snack" class="icons"> </td>
+                    </tr>
+                    <tr>
+                      <td colspan="4" class="task-headline"> <p>THE LIFETIME SUPPLY CALCULATOR </p></td>
+                    </tr>
+                    <tr>
+                      <td colspan="4"><p>Ever wonder how much a "lifetime supply" of your favorite snack is? Wonder no more!</p></td>
+                    </tr>
+                    <tr>
+                      <td colspan="4">Please <em>fill in</em> the fields in order to find out: <br/> </td>
+                    </tr>
+                    <tr>
+                    <tr>
+                      <td> Your age <input type="number" name="age" value="29" id="supply-user-age"> </td>
+                      <td> Snack Type <input type="text" name="snackType" value="popcorn" id="supply-snack-type"> </td>
+                      <td> Snack Amount <input type="number" name="amount" value="60" id="supply-amount-per-day"> </td>
+                      <td> Lifespan <input type="number" name="ageMax" value="100" id="supply-age-max"> </td>
+                    </tr>
+                    </tr>
+                    <tr>
+                      <td> <p><button type="button" name="button" onclick="calculateSupply('supply-user-age', 'supply-amount-per-day', 'supply-age-max', 'supply-snack-type')"> Calculate </button></p> </td>
+                    </tr>
+                    <tr>
+                      <td colspan="4" id="supply-results">  </td>
+                    </tr>
+                  </table>
+              </fieldset>
+            </form>
+            <!-- THRID TASK -->
+            <form class="task3" action="index.html" method="post">
+              <fieldset>
+                <legend>TASK 3</legend>
+                <table>
+                  <tr>
+                    <td colspan="2" class="icon-td"> <img src="img/circle.png" alt="cirlce" class="icons"> </td>
+                  </tr>
+                  <tr>
+                    <td class="task-headline"  colspan="2"><p>THE GEOMETRIZER</p></td>
+                  </tr>
+                  <tr>
+                    <td><p>Did you wonder what is the circumference and the area of a cirlce based on its radius? I know, me too :) Now lets find out together...</p></td>
+                  </tr>
+                  <tr>
+                    <td>Please <em>set your cirlce's radius</em> in order to find out:</td>
+                    <td> <input type="number" name="radius" value="1" id="geo-user-radius"> </td>
+                  </tr>
+                  <tr>
+                    <td><button type="button" name="button" onclick="calcCirle('geo-user-radius')"> Calculate </button> </td>
+                  </tr>
+                  <tr>
+                    <td id="geo-circle-result"></td>
+                  </tr>
+                </table>
+              </fieldset>
+            </form>
+            <!-- FOURTH TASK -->
+            <form class="task4" action="index.html" method="post">
+              <fieldset>
+                <legend> TASK 4 </legend>
+                  <table>
+                    <tr>
+                      <td colspan="2" class="icon-td"> <img src="img/termometer.png" alt="termometer" class="icons"> </td>
+                    </tr>
+                    <tr>
+                      <td class="task-headline"><p>THE TEMPERATURE CONVERTER</p></td>
+                    </tr>
+                    <tr>
+                      <td> <p>If you are like me, you get very confuser with converting Fahrenheit to Celsius and vice versa. Here is a small calculator to help us with that.</p></td>
+                    </tr>
+                    <tr>
+                      <td> Please enter a <em>tempreture</em> in the fields:</td>
+                    </tr>
+                    <tr>
+                      <td> <em>F°</em> <input type="number" name="Fahrenheit" value="32" onchange="fahrenheitToCelsius('user-fahrenheit')" onkeyup="fahrenheitToCelsius('user-fahrenheit')" id="user-fahrenheit"> </td>
+                    </tr>
+
+                    <tr>
+                      <td> <em>C°</em> <input type="number" name="Celsius" value="0" onchange="celsiusToFahrenheit('user-celsius')" onkeyup="celsiusToFahrenheit('user-celsius')" id="user-celsius"> </td>
+                    </tr>
+                  </table>
+              </fieldset>
+            </form>
+        </div>
+        </div>
+    </div>
+    <!--  JavaScript files -->
+    <script src="js/main.js"></script>
+  </body>
+</html>
